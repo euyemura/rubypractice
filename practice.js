@@ -37,3 +37,65 @@ function mult(arr) {
 }
 
 console.log(mult(numArr))
+console.log(a == null)
+var a = "hello"
+console.log(a)
+
+a = "goodbye"
+console.log(a)
+
+var arr = ["y", 5, 7, "ten", 2, 15, "z"]
+
+let emptyArr = []
+for (let i =0; i<arr.length; i++) {
+  if(typeof(arr[i])=="number") {
+    emptyArr.push(arr[i])
+  }
+}
+console.log(emptyArr)
+
+console.log(parseInt('ten'))
+
+var arr = ["y", 5, 7, "ten", 2, 15, "z"]
+
+var getNum = function (array) {
+  let emptyArr = array.filter(el =>
+  typeof(el) == "number")
+  return emptyArr
+}
+
+
+var arr = ["y", 5, 7, "ten", 2, 15, "z"]
+
+var getNum = (array) => {
+  let emptyArr = array.filter(el =>
+  (!isNaN(parseInt(el))))
+  return emptyArr
+}
+
+console.log(getNum(arr))
+
+console.log(typeof(2))
+
+console.log(parseInt("ten"))// === "number")
+
+console.log(typeof(parseInt("ten")))
+
+console.log(typeof(Nan))
+
+
+// function getShape(condition) {
+//     // shape exists here with a value of undefined
+//     // OUTPUT : undefined
+//     console.log(shape);
+//     if (condition) {
+//         var shape = "square";
+//         // some other code
+//         return shape;
+//     } else {
+//         // shape exists here with a value of undefined
+//         return shape;
+//     }
+// }
+//
+// console.log(getShape(false))
