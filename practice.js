@@ -81,8 +81,13 @@ console.log(parseInt("ten"))// === "number")
 
 console.log(typeof(parseInt("ten")))
 
-console.log(typeof(Nan))
+console.log(typeof(NaN))
 
+console.log(parseInt("ten"))
+
+let stupid = parseInt("ten")
+console.log(stupid)
+console.log(typeof(NaN))
 
 // function getShape(condition) {
 //     // shape exists here with a value of undefined
