@@ -43,14 +43,14 @@ class Taxi_service
 
   def matchem
     @riderqueu.length.times do
-    if(@taxiqueu[@count].riders_list.length <       @taxiqueu[@count].seats)
-      @taxiqueu[@count].pickup(@riderqueu[@count])
-      @count += 1
-    else
-    @count += 1
-    end
+      if(@taxiqueu[@count].riders_list.length <       @taxiqueu[@count].seats)
+        @taxiqueu[@count].pickup(@riderqueu[@count])
+        @count += 1
+      else
+        @count += 1
+      end
     puts "I'm a genius #{@taxiqueu[@count-1].riders_list}"
-  end
+    end
   end
 end
 
