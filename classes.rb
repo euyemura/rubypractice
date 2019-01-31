@@ -124,3 +124,5 @@ end
 
 mydog = Dog.new("happy", "balls", "wolf")
 p mydog
+
+#hola mi amigo

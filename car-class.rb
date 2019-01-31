@@ -4,14 +4,14 @@
 # Stories
 # Story: As a programmer, I can make a vehicle.
 # Hint: Create a class called Vehicle, and create a variable called my_vehicle which contains an object of class Vehicle.
-
-class Vehicle
- def initialize
- end
-end
-
-new_vehicle = Vehicle.new
-p new_vehicle
+#
+# class Vehicle
+#  def initialize
+#  end
+# end
+#
+# new_vehicle = Vehicle.new
+# p new_vehicle
 
 
 # Story: As a programmer, I can make a car.
@@ -30,32 +30,46 @@ p new_vehicle
 # Hint: Create method(s) to allow programmer to turn lights on and off. Which class are the methods in?
 #
 # Story: As a programmer, I can determine if the lights are on or off. Lights start in the off position.
+
+# You should be able to test the car now:
+# vehicle = Vehicle.new(...)
+# vehicle.lights_on # should return false because they start false
+# vehicle.lights_on = true # this should change the lights to true
+# vehicle.lights_on # should now return true
+# vehicle.lights_on = false # this should change the lights to false
+# vehicle.lights_on? # should return false
+# Story: As a programmer, I can signal left and right. Turn signals starts off.
+
+# def switch_lights()
+
+# if (@lights_on == "off")
+#    @lights_on = "on"
+# elsif (@lights_on == "on")
+#    @lights_on = "off"
+#  end
+# puts "The lights are #{@lights_on}"
+# end
 class Car
-  def initialize (model_year)
-    @wheels = 4
+  attr_accessor :lights_on, :wheels, :signal, :speed, :type
+  def initialize ( model_year, type, wheels = 4, lights_on = false)
+    @wheels = wheels
     @model_year = model_year
-    @lights_on = "off"
+    @lights_on = lights_on
+    @signal = "off"
+    @type = type
+    @speed = 0
   end
 
-  def get_wheels ()
-    p @wheels
-  end
-
-  def switch_lights()
-    if (@lights_on == "off")
-       @lights_on = "true"
-    elsif (@lights_on == "on")
-       @lights_on = "false"
-     end
-    puts "The lights are on: #{@lights_on}"
+  def turn_signal (direction = "off")
+    @signal = direction
+    puts "Your #{@type} turn signal is #{direction}"
   end
 end
 
-new_car = Car.new(1999)
-p new_car.get_wheels
 
-# Story: As a programmer, I can make a Tesla car.
-# Hint: Create an variable called my_tesla which is of class Tesla which inherits from class Car.
+new_car = Car.new(1999, "lambo")
+p new_car.lights_on
+new_car.turn_signal("right")
 
 class Tesla < Car
   def initialize
@@ -66,33 +80,38 @@ end
 new_tesla = Tesla.new(1920)
 p new_tesla
 
-class Tata < Car
-  def initialize()
-    super(model_year)
+    super(model_year, type)
   end
 end
 
-new_tata = Tata.new(1800)
-p new_tata
+new_tesla = Tesla.new(1999)
+puts new_tesla.lights_on
+new_tesla.lights_on = true
+puts new_tesla.lights_on
+new_tesla.turn_signal("right")
 
-class Toyota < Car
-  def initialize()
-    super(model_year)
-  end
-end
-
-new_toyota = Toyota.new(2015)
-p new_toyota
+# class Tata < Car
+#   def initialize(model_year)
+#     @type = "Tata"
+#     super(model_year)
+#   end
+# end
+#
+# new_tata = Tata.new(1800)
+# new_tata.lights_on = true
+#
+#
+#
+# class Toyota < Car
+#   def initialize(model_year)
+#     @type = "Toyota"
+#     super(model_year)
+#   end
+# end
+#
+# new_toyota = Toyota.new(2015)
 
 #
-# You should be able to test the car now:
-# vehicle = Vehicle.new(...)
-# vehicle.lights_on # should return false because they start false
-# vehicle.lights_on = true # this should change the lights to true
-# vehicle.lights_on # should now return true
-# vehicle.lights_on = false # this should change the lights to false
-# vehicle.lights_on? # should return false
-# Story: As a programmer, I can signal left and right. Turn signals starts off.
 #
 # Story: As a programmer, I can determine the speed of a car. Speed starts at 0 km/h.
 #

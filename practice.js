@@ -22,18 +22,106 @@
 // does a[1] == a[3]
 // does a[1] == a[4]
 // does a[1] == a[5]
-let numArr = [8, 7, 5, 4, 3, 1, 7, 6]
-let newArr = numArr.map(el =>
-el*3)
+// let numArr = [8, 7, 5, 4, 3, 1, 7, 6]
+// let newArr = numArr.map(el =>
+// el*3)
+//
+// console.log(newArr)
+//
+// function mult(arr) {
+//   let stupidArr = []
+//   for (let i = 0; i < arr.length; i++) {
+//     stupidArr.push(arr[i]*3)
+//   }
+//   return stupidArr
+// }
+//
+// console.log(mult(numArr))
+// console.log(a == null)
+// var a = "hello"
+// console.log(a)
+//
+// a = "goodbye"
+// console.log(a)
+//
+// var arr = ["y", 5, 7, "ten", 2, 15, "z"]
+//
+// let emptyArr = []
+// for (let i =0; i<arr.length; i++) {
+//   if(typeof(arr[i])=="number") {
+//     emptyArr.push(arr[i])
+//   }
+// }
+// console.log(emptyArr)
+//
+// console.log(parseInt('ten'))
+//
+// var arr = ["y", 5, 7, "ten", 2, 15, "z"]
+//
+// var getNum = function (array) {
+//   let emptyArr = array.filter(el =>
+//   typeof(el) == "number")
+//   return emptyArr
+// }
+//
+//
+// var arr = ["y", 5, 7, "ten", 2, 15, "z"]
+//
+// var getNum = (array) => {
+//   let emptyArr = array.filter(el =>
+//   (!isNaN(parseInt(el))))
+//   return emptyArr
+// }
+//
+// console.log(getNum(arr))
+//
+// console.log(typeof(2))
+//
+// console.log(parseInt("ten"))// === "number")
+//
+// console.log(typeof(parseInt("ten")))
+//
+// console.log(typeof(NaN))
+//
+// console.log(parseInt("ten"))
+//
+// let stupid = parseInt("ten")
+// console.log(stupid)
+// console.log(typeof(NaN))
 
-console.log(newArr)
+// function getShape(condition) {
+//     // shape exists here with a value of undefined
+//     // OUTPUT : undefined
+//     console.log(shape);
+//     if (condition) {
+//         var shape = "square";
+//         // some other code
+//         return shape;
+//     } else {
+//         // shape exists here with a value of undefined
+//         return shape;
+//     }
+// }
+//
+// console.log(getShape(false))
 
-function mult(arr) {
-  let stupidArr = []
-  for (let i = 0; i < arr.length; i++) {
-    stupidArr.push(arr[i]*3)
+
+var toons = [{name: "Tom", animal: "cat"}, {name: "Jerry", animal: "mouse"}, {name: "Bugs", animal: "rabbit"}, {name: "Daffy", animal: "duck"}, {name: "Felix", animal: "cat"}]
+
+findCat = (arr) => {
+  let newArr = []
+  arr.map(el => {
+    if (el.animal == "cat")
+    newArr.push(el)
   }
-  return stupidArr
+  )
+  return newArr
 }
 
-console.log(mult(numArr))
+findCat3 = (arr) =>
+  arr.filter(el =>
+    el.animal == "cat"
+  )
+
+console.log(findCat(toons))
+console.log(findCat3(toons))
