@@ -63,7 +63,7 @@ class Tesla < Car
   end
 end
 
-new_tesla = Tesla.new()
+new_tesla = Tesla.new(1920)
 p new_tesla
 
 class Tata < Car
